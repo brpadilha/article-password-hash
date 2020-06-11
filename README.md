@@ -1,3 +1,5 @@
+Código da publicação do ['artigo'](https://dev.to/brpadilha/criando-um-password-hash-para-seu-usuario-no-banco-de-dados-1g67) publicado no dev.to.
+
 Olá, hoje gostaria de dar uma dica legal para manter a segurança da senha dos usuários que você irá cadastrar no banco de dados, nada mais é do que o password hash.
 
 Estarei usando aqui as tecnologias: Postgres, express, nodejs e o sequelize. E biblioteca que foi utilizada como hash [`bcryptjs`](https://www.npmjs.com/package/bcrypt).
@@ -6,7 +8,7 @@ Imagine a tabela users do banco de dados postgres da seguinte forma:
 
 ![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/xp4imxi3hcdj67ae0joj.png)
 
-O model User.js está da seguinte forma:
+O model User.js está assim:
 
 ```js
 import Sequelize, { Model } from "sequelize";
@@ -31,7 +33,7 @@ class User extends Model {
 export default User;
 ```
 
-E o nosso UserController está da seguinte forma:
+E o nosso UserController está assim:
 
 ```js
 
