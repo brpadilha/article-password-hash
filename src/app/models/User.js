@@ -1,20 +1,18 @@
-import Sequelize, { Model } from 'sequelize';
+import Sequelize, {
+  Model
+} from 'sequelize';
 import bcrypt from 'bcryptjs';
 
 class User extends Model {
   static init(sequelize) {
-    super.init(
-      {
-        name: Sequelize.STRING,
-        sex: Sequelize.STRING,
-        hair_color: Sequelize.STRING,
-        password: Sequelize.VIRTUAL,
-        password_hash: Sequelize.STRING,
-      },
-      {
-        sequelize,
-      }
-    );
+    super.init({
+      name: Sequelize.STRING,
+      email: Sequelize.STRING,
+      password: Sequelize.VIRTUAL,
+      password_hash: Sequelize.STRING,
+    }, {
+      sequelize,
+    });
     // password hash
     this.addHook('beforeSave', async client => {
       if (client.password) {
@@ -22,10 +20,6 @@ class User extends Model {
       }
     });
     return this;
-  }
-
-  checkPassword(password) {
-    return bcrypt.compare(password, this.password_hash);
   }
 }
 

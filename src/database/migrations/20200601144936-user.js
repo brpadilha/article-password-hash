@@ -11,15 +11,11 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: true,
       },
-      sex: {
+      email: {
         type: Sequelize.STRING,
         allowNull: true,
       },
       password_hash: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      hair_color: {
         type: Sequelize.STRING,
         allowNull: false,
       },
